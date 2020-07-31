@@ -175,12 +175,7 @@
 
 
 
-/*
-    //Muestra los caracteres de la cadena con sus valores ascci para eliminarlos si se requiere
-    $cad = str_split($html2);
-    foreach ($cad as $letra)
-        echo "$letra - " . ord($letra)."<br>";
- /* */
+
 
 ?>
 

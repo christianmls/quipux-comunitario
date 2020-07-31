@@ -556,7 +556,7 @@ function GuardarUsuariosRadicado($radicado, $usuario, $usua_tipo, $rad) {
             //Obtener los nombres de las listas en caso de que los destinatarios se seleccionaron de una lista.
             if(trim($rad['radi_lista_dest'])!='' and trim($rad['radi_lista_dest'])!='0') {
                 $radi_lista_dest = $rad['radi_lista_dest'];
-                $codList = split("-",$radi_lista_dest);
+                $codList = explode("-",$radi_lista_dest);
                 if(sizeof($codList)>2) {
                     for($j=1;$j<sizeof($codList)-2;$j+=2) {
                         $datosLista = ObtenerDatosLista(trim($codList[$j]),$this->db);

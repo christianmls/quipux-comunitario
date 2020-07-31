@@ -84,7 +84,6 @@ if (!$orderTipo) {
     $orderTipo="desc";
 }
 
-
 ?>
   <body>
     <br>
@@ -95,7 +94,6 @@ if (!$orderTipo) {
     if (isset($_GET["asocImgRad"]) && $_GET["asocImgRad"]=="0")
         $query = $query3;
 
-    //echo $query;
     //    $db->query('set enable_nestloop = off');
     $pager = new ADODB_Pager($db,$query,'adodb',true,$orderNo,$orderTipo,true);
     $pager->checkAll = false;

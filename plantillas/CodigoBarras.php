@@ -41,12 +41,19 @@ if ($nuevo=="no") {
     }
 }
 
+function br_style($numero=0){
+    $br="";
+    for($i=0;$i<$numero;$i++)
+        $br.="<br>&nbsp;";
+        //echo $br;
+    return $br;
+}
 function strtoupper2($cadena) {
     $cadena = strtoupper($cadena);
     $cadena = str_replace("á","Á",str_replace("é","É",str_replace("í","Í",str_replace("ó","Ó",str_replace("ú","Ú",str_replace("ñ","Ñ",$cadena))))));
     return $cadena;
 }
-
+//echo  "br".br_style(10)."aca";die();
 include "$ruta_raiz/include/barcode/index.php";
 include "$ruta_raiz/class_control/class_gen.php";
 include "$ruta_raiz/obtenerdatos.php";
@@ -71,148 +78,102 @@ $usr = ObtenerDatosUsuario($registro["usua_radi"],$db);
 $date = ObtenerCampoRadicado("radi_fech_radi",$verrad,$db);
 $fecha = substr($date,0,19)." GMT ".substr($date,-3);
 
-$tamano_papel = "a4";
-$orientacion_papel = "portrait";
-
+//$tamano_papel = "a4";
+//$orientacion_papel = "portrait";
+$imagenPDF = str_replace('../bodega/tmp/','',$file).".png";
+$imagenPDFS = str_replace('../bodega/tmp/','',$file).".ps";
 $inicio = '
 <html>
 <head>
-<title>.: IMPRIMIR COMPROBANTES :.</title>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
-<body>
+
+<body   >
 ';
 
 if ($tipo_comp==1 || $tipo_comp==0) {
-$codigo_barras = '
-&nbsp;
-<script type="text/php">
-    $obj_id = $pdf->open_object();
-    $max_x = $pdf->get_width();
-    $max_y = $pdf->get_height();
-    $fuente = "serif";
-    $pdf->image("'.$ruta_raiz.$institucion["logo"].'","'. substr($institucion["logo"],-3).'", $max_x-180, 25, 60, 20);
-    $pdf->image("'.$file.'.png", "png", $max_x-180, 50, 170, 40);
-    $cadena = "'.iconv("ISO-8859-1", "UTF-8", $institucion["nombre"]).'";
-    $pdf->text ($max_x-120, 25, $cadena, $fuente, 8);
-    $cadena = "'.$registro["radi_nume_text"].'";
-    $pdf->text ($max_x-120, 35, $cadena, $fuente, 8);
-    $pdf->close_object();
-    $pdf->add_object($obj_id, "add");
-</script>';
+    $codigo_barras.="<table  align='right'  width='60%'>";
+    $codigo_barras.="<tr><td  width='60%'></td><td>";
+    $codigo_barras.="<table border='0' width='40%' align='right'>";
+   
+    $codigo_barras.= '<tr><td align="left">'.$institucion["nombre"].'</td></tr>';
+    //$codigo_barras .='<tr><td align="right"><img src="'.$imagenPDF.'" height="30" width="200" type="image/png" ></td></tr>';
+    $codigo_barras.= '<tr><td align="left">'.$registro["radi_nume_text"].'</td></tr>';
+
+    $codigo_barras.="</table>";
+    $codigo_barras.="</td></tr>";
+    $codigo_barras.="</table>";
+    $tipo_formato = "B";
+ 
 }
 
-if ($tipo_comp==0)
-    $pagina = '$pdf-> new_page ();';
-else
-    $pagina='';
 
 if ($tipo_comp==2 || $tipo_comp==0) {
-
-$comprobante .= '
-&nbsp;
-<script type="text/php">
-    '.$pagina.'
-    $obj_id = $pdf->open_object();
-    $max_x = $pdf->get_width();
-    $max_y = $pdf->get_height();
-    $fuente = "serif";
-    $pdf->image("'.$ruta_raiz.$institucion["logo"].'","'. substr($institucion["logo"],-3).'", $max_x-215, $max_y-130, 60, 20);
-    $cadena = "'.iconv("ISO-8859-1", "UTF-8", strtoupper2($institucion["nombre"])).'";
-    $tf = 8;
-    do {
-    	$tamano = Font_Metrics::get_text_width($cadena, $fuente, $tf);
-    	if ($tamano<=200)
-	    break;
-    	--$tf;
-    } while ($tf >=3);';
- // Imprimir en el comprobante el número de teléfono de la institución en caso de tenerlo
- if(trim($institucion['telefono'])!='')
- {
-    $comprobante .= '
-    $pdf->text ($max_x-250, $max_y-118, $cadena, $fuente, $tf);
-    $cadena = "'.iconv("ISO-8859-1", "UTF-8", 'Teléfono(s)'). ': '.$institucion['telefono'].'";';
- }
- 
- $comprobante .= '
-    $pdf->text ($max_x-250, $max_y-108, $cadena, $fuente, $tf);
-    $cadena = "Documento No. : '.$registro["radi_nume_text"].'";
-    $pdf->text ($max_x-250, $max_y-90, $cadena, $fuente, 10);
-    $cadena = "Fecha                 : '.$fecha.'";
-    $pdf->text ($max_x-250, $max_y-80, $cadena, $fuente, 10);
-    $cadena = "Recibido por      : '.iconv("ISO-8859-1", "UTF-8", $usr["nombre"]).'";
-    $pdf->text ($max_x-250, $max_y-70, $cadena, $fuente, 10);
-    $cadena = "Para verificar el estado de su documento ingrese a";
-    $pdf->text ($max_x-250, $max_y-60, $cadena, $fuente, 10);
-    $cadena = "'.$nombre_servidor.'";
-    $pdf->text ($max_x-220, $max_y-50, $cadena, $fuente, 10);';
-	$comprobante .= '$cadena = "con el usuario: \"'.$usr_login.'\""; ';
-    $comprobante .= '$pdf->text ($max_x-218, $max_y-40, $cadena, $fuente, 10);
-    $pdf->close_object();
-    $pdf->add_object($obj_id, "add");
-</script>';
+    //$comprobante.= br_style(30);
+    $sizeBody = "0.9";
+    $comprobante.="<table border='0' width='100%' align='right' cellpadding='0'>";
+    $comprobante.='<tr><td colspan="2" align="left" ><font size="0.0008">'.strtoupper2($institucion["nombre"]).'</font></td></tr>';
+    if (trim($institucion['telefono'])!='')
+        $comprobante.='<font size="0.0008"> / Teléfono(s):'.$institucion['telefono'].'</font>';
+    $comprobante.='</td></tr>';
+    $comprobante.='<tr><td width="40%"><font size="'.$sizeBody.'">Documento No.:</font></td><td><font size="'.$sizeBody.'">'.$registro["radi_nume_text"].'</font></td></tr>';
+    $comprobante.='<tr><td><font size="'.$sizeBody.'">Fecha:</font></td><td><font size="'.$sizeBody.'">'.$fecha.'</font></td></tr>';
+    $comprobante.='<tr><td><font size="'.$sizeBody.'">Recibido por:</font></td><td><font size="'.$sizeBody.'">'.$usr["nombre"].'</font></td></tr>';    
+    $comprobante.='<tr><td colspan="2" align="left"><font size="'.$sizeBody.'">Para verificar el estado de su documento ingrese a: '.$nombre_servidor.' </font></td></tr>';
+    $comprobante.='<tr><td colspan="2" align="left"><font size="'.$sizeBody.'">con el usuario:'.$usr_login.'</font></td></tr>';
+    
+    
+    $comprobante.='</table>';
+    $tipo_formato = "C";
 }
 //Se imprime el comprobante en ticket
 if ($tipo_comp==3 || $tipo_comp==0) {
 
-    $tamano_papel = "ticket zb";
-    $orientacion_papel = "letter";
-
-    $comprobante .= '
-    &nbsp;
-    <script type="text/php">
-        '.$pagina.'
-        $obj_id = $pdf->open_object();
-        $max_x = $pdf->get_width();
-        $max_y = $pdf->get_height();
-        $fuente = "serif";        
-        $cadena = "'.iconv("ISO-8859-1", "UTF-8", strtoupper2($institucion["nombre"])).'";
-        $tf = 8;
-        do {
-            $tamano = Font_Metrics::get_text_width($cadena, $fuente, $tf);
-            if ($tamano<=200)
-            break;
-            --$tf;
-        } while ($tf >=3);';
-     // Imprimir en el comprobante el número de teléfono de la institución en caso de tenerlo
-     if(trim($institucion['telefono'])!='')
-     {
-        $comprobante .= '
-        $pdf->text (10, 10, $cadena, $fuente, $tf);
-        $cadena = "'.iconv("ISO-8859-1", "UTF-8", 'Teléfono(s)'). ': '.$institucion['telefono'].'";';
-     }
-
-      $comprobante .= '
-        $pdf->text (10, 20, $cadena, $fuente, $tf);
-        $cadena = "Documento No. : '.$registro["radi_nume_text"].'";
-        $pdf->text (10, 40, $cadena, $fuente, 10);
-        $cadena = "Fecha                 : '.$fecha.'";
-        $pdf->text (10, 50, $cadena, $fuente, 10);
-        $cadena = "Recibido por      : '.iconv("ISO-8859-1", "UTF-8", $usr["nombre"]).'";
-        $pdf->text (10, 60, $cadena, $fuente, 10);
-        $cadena = "Para verificar el estado de su documento ingrese a";
-        $pdf->text (10, 70, $cadena, $fuente, 10);
-        $cadena = "'.$nombre_servidor.'";
-        $pdf->text (20, 80, $cadena, $fuente, 10);';
-        $comprobante .= '$cadena = "con el usuario: \"'.$usr_login.'\""; ';
-        $comprobante .= '$pdf->text (20, 90, $cadena, $fuente, 10);
-        $pdf->close_object();
-        $pdf->add_object($obj_id, "add");
-        </script>';
+  
+    $sizeBody = "0.9";
+    $comprobante.='<center><table align="center" border="0" cellspacing="0"  cellpadding="0" rowspancing="0" width="65%" >';
+    $comprobante.='<tr><td colspan="2" align="left" ><font size="0.0008">'.strtoupper2($institucion["nombre"]).'</font></td></tr>';
+    if (trim($institucion['telefono'])!='')
+        $comprobante.='<font size="0.0008"> / Teléfono(s):'.$institucion['telefono'].'</font>';
+    $comprobante.='</td></tr>';
+    $comprobante.='<tr><td><font size="'.$sizeBody.'">Documento No.:</font></td><td><font size="'.$sizeBody.'">'.$registro["radi_nume_text"].'</font></td></tr>';
+    $comprobante.='<tr><td><font size="'.$sizeBody.'">Fecha:</font></td><td><font size="'.$sizeBody.'">'.$fecha.'</font></td></tr>';
+    $comprobante.='<tr><td><font size="'.$sizeBody.'">Recibido por:</font></td><td><font size="'.$sizeBody.'">'.$usr["nombre"].'</font></td></tr>';
+    $comprobante.='<tr><td colspan="2"><font size="'.$sizeBody.'">Para verificar el estado de su documento ingrese a:</font></td></tr>';
+    $comprobante.='<tr><td colspan="2" align="center"><font size="'.$sizeBody.'">'.$nombre_servidor.'</font></td></tr>'; 
+    $comprobante.='<tr><td colspan="2" align="center"><font size="'.$sizeBody.'">con el usuario:'.$usr_login.'</font></td></tr>';
+    
+    
+    $comprobante.='</table></center>';
+    $tipo_formato = "T";
+  
 }
 $fin = '
  &nbsp;
 </body>
 </html>
-';
+'; 
+require_once("$ruta_raiz/interconexion/generar_pdf.php");
+$radi_nume=str_replace("/","-",$registro["radi_nume_text"]);
+$html = $inicio.$codigo_barras.$comprobante.$fin;
 
-$doc_pdf = $inicio.$codigo_barras.$comprobante.$fin;
+//$html = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'></head><body>$html</body></html>";
+file_put_contents("$ruta_raiz/bodega/tmp/$radi_nume.html", $html);
 
-require_once("$ruta_raiz/js/dompdf/dompdf_config.inc.php");
-$dompdf = new DOMPDF();
-$dompdf->load_html($doc_pdf);
-$dompdf->set_paper($tamano_papel, $orientacion_papel);
-$dompdf->set_base_path(getcwd());
-$dompdf->render();
-$dompdf->stream("comprobante.pdf");
+//echo $plantilla;die();
+$pdf = ws_generar_pdf($html, "", $servidor_pdf, "", "", "", 100,$tipo_formato);
+$path = "/tmp/$radi_nume.pdf";
+$path_archivo = "/tmp/$radi_nume.pdf";
+$path_descarga = "$ruta_raiz/archivo_descargar.php?path_arch=$path&nomb_arch=comprobante.pdf";
+file_put_contents("$ruta_raiz/bodega/$path_archivo", $pdf);
 ?>
+<iframe  name="ifr_descargar_archivo" id="ifr_descargar_archivo" style="display: none" src="<?=$path_descarga?>">
+            Su navegador no soporta iframes, por favor actualicelo.</iframe>
+<script>
+console.log("Comprobante Autorizado");
+setTimeout(retroceder, 500); 
+function retroceder(){
+    window.history.back();
+}
+</script>

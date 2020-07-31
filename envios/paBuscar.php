@@ -35,7 +35,7 @@ include_once "$ruta_raiz/funciones.php";
 
         if ($busqRadicados) {
             $busqRadicados = trim(limpiar_sql($busqRadicados));
-            $textElements = split (",", $busqRadicados);
+            $textElements = explode (",", $busqRadicados);
             $newText = "";
             $i = 0;
             foreach ($textElements as $item) {

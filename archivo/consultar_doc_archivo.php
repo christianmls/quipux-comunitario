@@ -58,7 +58,7 @@ include_once "obtener_datos_archivo.php";
   $sql_buscar = "";
   if($txt_buscar != "")
   {
-    $textElements = split (",", $txt_buscar);
+    $textElements = explode (",", $txt_buscar);
     foreach ($textElements as $item)
     {
 	if (trim ($item) != "")

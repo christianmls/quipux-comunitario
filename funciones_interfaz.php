@@ -33,12 +33,13 @@ function html_head ($flag_estilos=true, $flag_index=false) {
         $texto .= " <link href='$ruta_raiz/estilos/light_slate.css' rel='stylesheet' type='text/css'>
             <link href='$ruta_raiz/estilos/splitmenu.css' rel='stylesheet' type='text/css'>
             <link href='$ruta_raiz/estilos/template_css.css' rel='stylesheet' type='text/css'>
+            <link href='$ruta_raiz/estilos/navbar.css' rel='stylesheet' type='text/css'>
             <link rel='shortcut icon' href='$ruta_raiz/imagenes/favicon.ico'>
             <link rel='stylesheet' type='text/css' href='$ruta_raiz/js/spiffyCal/spiffyCal_v2_1.css'>
             <link rel='stylesheet' type='text/css' href='$ruta_raiz/js/calendario_php/calendario_php.css'>";
     }
 
-    $texto .= file_get_contents("$ruta_raiz/herramienta_monitoreo_quipux.js");
+
     $texto .= " <script type='text/JavaScript' src='$ruta_raiz/js/calendario_php/calendario_php.js'></script>
                 <script type='text/JavaScript' src='$ruta_raiz/js/funciones_js.js'></script>
                 <script type='text/JavaScript'>
@@ -164,18 +165,7 @@ function html_validar_browser () {
     <table align='center' width='100%' cellpadding='0' cellspacing='0' class='mainbody'>
         <tr>
             <td align='center' width='100%'>
-            <script type='text/javascript'>
-            var version = $versionEstable;                
-                if (tipo_browser[cli_browser][cli_version] != true) {
-                    document.write('<p class=\"accent\">AVISO:Usted esta utilizando ' + cli_browser + ' ' + cli_version  + '</p>');
-                    document.write('<p class=\"accent\">Actualmente esta versi&oacute;n de navegador no es soportada por Quipux, algunas funciones podr&iacute;an no funcionar correctamente.' + '</p>');
-                    document.write('<p class=\"accent\">Le recomendamos instalar:<h2> <a href=\"http://www.mozilla.com/en-US/\" ><img width=25 height=25 src=\"$ruta_raiz/imagenes/logo_mfox.png\" alt=\"Mozilla Firefox\" title=\"Mozilla Firefox\"> </a></h2></p>');
-                }else{
-                    versionFirefoxCl = navigator.userAgent.split('/').pop();                    
-                    if (parseInt(versionFirefoxCl)>=version) 
-                    document.write('<p class=\"accent\"><font color=\"Grey\" size=\"1\">Aseguramos el correcto funcionamiento del sistema de gestión documental Quipux, con versiones inferiores a la '+version+' del navegador de Internet Mozilla Firefox. </font><img width=25 height=25 src=\"$ruta_raiz/imagenes/logo_mfox.png\" alt=\"Mozilla Firefox\" title=\"Mozilla Firefox\">' + '</p>');
-                }
-            </script>
+            
             </td>
         </tr>
         

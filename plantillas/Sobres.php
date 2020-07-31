@@ -20,7 +20,7 @@
 session_start();
 $ruta_raiz = "..";
 require_once("$ruta_raiz/funciones.php"); 
-p_register_globals($_POST);
+//p_register_globals($_POST);
 include_once "$ruta_raiz/rec_session.php";
 include_once "$ruta_raiz/obtenerdatos.php";
 
@@ -185,7 +185,7 @@ $orientacion_papel = "portrait";
 
 $html = '<html>
         <head>
-        <title>.: IMPRIMIR COMPROBANTES :.</title>
+        <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         </head>
         <body>
@@ -212,13 +212,37 @@ switch ($rad_tipo_sobre) {
         break;
 }
 
-
+    
     $html .="<tr><td width='$ancho1'>&nbsp;&nbsp;</td><td width='$ancho2'><font size='3' style='line-height: 0.9em;'>";
     $html .= $txt_texto_sobre;
     $html .= '</font></td></tr>';
     $html .= "</table></body></html>";
 
-
+    require_once("$ruta_raiz/interconexion/generar_pdf.php");
+    
+    $html = preg_replace(':<a .*?>:is', "", $html);
+    $html = str_replace("</a>", "", $html);
+    $html = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'></head><body>$html</body></html>";
+    file_put_contents("$ruta_raiz/bodega/tmp/$radiNumeRadi"."Sobre.html", $html);
+    $pdf = ws_generar_pdf($html, $plantilla, $servidor_pdf, "", "", "", 100,"R");
+    $path = "/tmp/$radi_nume"."Sobre.pdf";
+    $path_archivo ="/tmp/$radi_nume"."Sobre.pdf";
+    sleep(2);
+    $path_descarga = "$ruta_raiz/archivo_descargar.php?path_arch=$path&nomb_arch=Sobre.pdf";
+    file_put_contents("$ruta_raiz/bodega/$path_archivo", $pdf);
+    ?>
+    <iframe  name="ifr_descargar_archivo" id="ifr_descargar_archivo" style="display: none" src="<?=$path_descarga?>">
+                Su navegador no soporta iframes, por favor actualicelo.</iframe>
+    <script>
+    console.log("Comprobante Autorizado");
+    setTimeout(retroceder, 500); 
+    function retroceder(){
+        window.history.back();
+    }
+    </script>
+<?php
+/*
+Cambio de dom
     //GENERACION DEL PDF
     require_once "$ruta_raiz/js/dompdf/dompdf_config.inc.php";
     $dompdf = new DOMPDF();
@@ -232,6 +256,7 @@ switch ($rad_tipo_sobre) {
     if ($tipoGuardar == 1)//imprime, este parametro esta en el archivo accion_imprimir_sobre.php funcion imprimir_sobre()
     echo "<iframe name='ifr_descargar_archivo' id='ifr_descargar_archivo' style='display: none' src='$path_descarga'>
           Su navegador no soporta iframes, por favor actualicelo.</iframe>";
+*/
 
 /*
     require_once("$ruta_raiz/interconexion/generar_pdf.php");

@@ -213,7 +213,7 @@ function ver_historico_obtener_observacion() {
 
         case 11: // Modificar documento (comparar textos)          
             if (trim($hist_referencia)!="" and $nivel_seguridad_documento>2) {
-                $tmp = split(",", $hist_referencia);
+                $tmp = explode(",", $hist_referencia);
                 if ($tmp[0] != $tmp[1])
                     $observacion .= "<a href=\"javascript:;\" onclick=\"ver_cambios_texto($hist_referencia);\">Ver Modificaciones en el Texto</a>";
             }
