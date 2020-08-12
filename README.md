@@ -38,6 +38,13 @@ https://minka.gob.ec/quipux-comunitario/scripts_data
 * Servidores de Base de datos
 
 | Tipo | Disco | Memoria GB | Procesador Ghz |
-| ------ | ------ | ------ |
-| Transaccional | 100 | 6 | 3.4 | 
-| Documental | 500 | 6 | 3.4 | 
+| ------ | ------ | ------ | ------ |
+| Transaccional | 30 | 6 | 3.4 | 
+| Documental | 8GB | 6 | 3.4 | 
+
+* Servidor Wen
+Disco 30Gb
+Memoria 6Gb
+Procesador 3.4 Ghz
+
+Almacenamiento de base de datos anual.
