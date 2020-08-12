@@ -6,7 +6,15 @@ Licenciado como software Libre, GNU/GPL para la distribución libre, gratuita ad
 
 # Requerimientos
 * Centos, Ubuntu
-* PHP 7.4
 * Apache
 * Postgres
 * Git
+* PHP 7.4
+
+# Paquetes
+* php
+* php-soap
+* php-pdo
+* php-pgsql
+* html2ps
+
