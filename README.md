@@ -34,7 +34,9 @@ Crear dos bases de datos (transacional y documental), descargue los scripts desd
 https://minka.gob.ec/quipux-comunitario/scripts_data
 
 
-#Requerimientos de Hardware
+# Requerimientos de Hardware
+* Almacenamiento de base de datos anual.
+*
 * Servidores de Base de datos
 
 | Tipo | Disco | Memoria GB | Procesador Ghz |
@@ -47,4 +49,3 @@ Disco 30Gb
 Memoria 6Gb
 Procesador 3.4 Ghz
 
-Almacenamiento de base de datos anual.
