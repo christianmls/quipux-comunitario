@@ -18,7 +18,7 @@ Licenciado como software Libre, GNU/GPL para la distribución libre, gratuita ad
 * php-pgsql
 * html2ps
 
-#Configuraciones adicionales
+# Configuraciones adicionales
 
 Remplace por su dominio o ip local
 
@@ -27,7 +27,7 @@ Remplace por su dominio o ip local
 * cp html_a_pdf/example.config.php html_a_pdf/config.php
 * cp html_a_pdf/example.html_a_pdf.wsdl html_a_pdf/html_a_pdf.wsdl
 
-#Configuración de base de datos
+# Configuración de base de datos
 
 Crear dos bases de datos (transacional y documental), descargue los scripts desde:
 
