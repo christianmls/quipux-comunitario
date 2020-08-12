@@ -33,3 +33,11 @@ Crear dos bases de datos (transacional y documental), descargue los scripts desd
 
 https://minka.gob.ec/quipux-comunitario/scripts_data
 
+
+#Requerimientos de Hardware
+* Servidores de Base de datos
+
+| Tipo | Disco | Memoria GB | Procesador Ghz |
+| ------ | ------ | ------ |
+| Transaccional | 100 | 6 | 3.4 | 
+| Documental | 500 | 6 | 3.4 | 
