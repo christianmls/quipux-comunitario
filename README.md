@@ -36,7 +36,7 @@ https://minka.gob.ec/quipux-comunitario/scripts_data
 
 # Requerimientos de Hardware
 * Almacenamiento de base de datos anual.
-*
+
 * Servidores de Base de datos
 
 | Tipo | Disco | Memoria GB | Procesador Ghz |
@@ -44,7 +44,7 @@ https://minka.gob.ec/quipux-comunitario/scripts_data
 | Transaccional | 30 | 6 | 3.4 | 
 | Documental | 8GB | 6 | 3.4 | 
 
-* Servidor Wen
+* Servidor Web
 Disco 30Gb
 Memoria 6Gb
 Procesador 3.4 Ghz
