@@ -5,7 +5,7 @@ La versión comunitaria ha sido adaptado para uso de GADS, Instituciones, Organi
 Licenciado como software Libre, GNU/GPL para la distribución libre, gratuita además de compartir los conocimientos y modificaciones.
 
 # Requerimientos
-* Centos, Ubuntu
+* Centos, Ubuntu, Fedora
 * Apache
 * PostgreSQL
 * Git
