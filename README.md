@@ -7,7 +7,7 @@ Licenciado como software Libre, GNU/GPL para la distribución libre, gratuita ad
 # Requerimientos
 * Centos, Ubuntu
 * Apache
-* Postgres
+* PostgreSQL
 * Git
 * PHP 7.4
 
