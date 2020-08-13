@@ -42,10 +42,12 @@ https://minka.gob.ec/quipux-comunitario/scripts_data
 | Tipo | Disco | Memoria GB | Procesador Ghz |
 | ------ | ------ | ------ | ------ |
 | Transaccional | 30 | 6 | 3.4 | 
-| Documental | 8GB | 6 | 3.4 | 
+| Documental | 8GB | 6 | 2.4 | 
 
 * Servidor Web
 Disco 30Gb
 Memoria 6Gb
 Procesador 3.4 Ghz
 
+
+Memoria y Procesador son requerimientos mínimos.
