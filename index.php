@@ -149,6 +149,11 @@ include_once "$ruta_raiz/config_title.php";
 </div>
 
 <div class="container text-center">    
+	<?php 
+	if ($institucionNombre == "institucionNombre" ){
+		echo "<font color='red' size='3'>Reemplace el archivo example.config_title.php por config_title.php y configure los nombres de su institución</font>";
+	} 
+	?>
   <h3><?=$institucionNombre?></h3>
   <br>
 
