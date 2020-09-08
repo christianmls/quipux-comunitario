@@ -143,9 +143,8 @@ function html_pie_pagina () {
                     <tr>
                         <td align='center'>
                             <center>
-                                <h3>Subsecretar&iacute;a de Gobierno Electr&oacute;nico
-                                - Secretar&iacute;a Nacional de la Administraci&oacute;n P&uacute;blica - 2008</h3>
-                                (Basado en el sistema de gesti&oacute;n documental ORFEO <a href='http://www.orfeogpl.org'>www.orfeogpl.org</a>)
+                                <h3>Subsecretar&iacute;a de Gobierno Electr&oacute;nico y Registro Civil
+                                - Ministerio de Telecomunicaciones y de la Sociedad de la Información</h3>
                             </center>
                         </td>
                     </tr>
@@ -237,14 +236,14 @@ function validar_telefono_movil() {
 
     return $mobile_browser;
 }
-//validar caja de texto
-//tags html para imput text
-//$nomCajaTexto= name o id
-//$valorTexto= value
-//$numeroCaracteresTexto, numero de caracteres (configurado en el config.php)
-//$titulo='', title
-//$size='30', tamaño predeterminado 30 por defecto
-//$busqueda='0', si es 0 borra el contenido de la caja de texto
+/**
+ $nomCajaTexto= name o id
+ $valorTexto= value
+ $numeroCaracteresTexto, numero de caracteres (configurado en el config.php)
+ $titulo='', title
+ $size='30', tamaño predeterminado 30 por defecto
+ $busqueda='0', si es 0 borra el contenido de la caja de texto
+**/
 function cajaTextoValida($nomCajaTexto,$valorTexto,$numeroCaracteresTexto,$javascript='',$titulo='',$size='30',$busqueda='0'){
     $nomCajaTexto2 = '"'.$nomCajaTexto.'"';
     $html="<input type=text id='$nomCajaTexto' name='$nomCajaTexto' value='$valorTexto' onblur='evento_ver(event,this,$numeroCaracteresTexto,$nomCajaTexto2,1); numeroCarecteresDePara(this,$numeroCaracteresTexto,$nomCajaTexto2,1);' class='tex_area'  size='$size' title='$titulo' $javascript>";
