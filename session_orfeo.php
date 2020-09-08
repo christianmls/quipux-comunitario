@@ -27,7 +27,7 @@ if ($_SESSION["session_dos_bloquear_usuario"]) {
           </center>");
 }
 
-header("Cache-Control: max-age=600");
+header("Cache-Control: Private");
 
 if (str_replace("/","",str_replace(".","",$ruta_raiz))!="")
     die ("<br/><center><font size='6' color='red'><b>HA SIDO DETECTADO UN INTENTO DE VIOLACI&Oacute;N DE LAS SEGURIDADES DEL SISTEMA<br/>SU N&Uacute;MERO IP SER&Aacute; BLOQUEDO PERMANENTEMENTE</b></font>");
