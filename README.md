@@ -54,9 +54,13 @@ Memoria y Procesador son requerimientos mínimos.
 
 # Integración de firmaEC
 * Edite el archivo config.php y modifique lo siguiente
+
 Generado en firma
-$api_key_token="appquipux";
+$api_key_token="appquipux"
+
 Edite el archivo include/tx/Tx.php
+
 CONSUMO DE SERVICIO WEB RES, la url es proporcionada de firma
+
 $urlws = "http://segun la configuracion del servicio de firma";
 
