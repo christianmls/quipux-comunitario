@@ -93,6 +93,7 @@ $servidor_viajes = "http://nombre_servidor_viajes";
 
 $servidor_pdf = "http://192.168.40.78/html_a_pdf";
 
+
 //Numero Meses en Reportes
 $numeroMeses = 60;
 //path de descarga del archivo

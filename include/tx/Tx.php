@@ -702,6 +702,7 @@ function mostrar_applet_firma_digital($radicados,$token='',$ejecucion=0,$numdocs
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         $token = curl_exec($curl);
         curl_close($curl);
+        
 // ------------------------------------------------------------------
     echo "<div id='div_firmar_doc' ></div>";
     echo "<div id='div_applet'></div>";
