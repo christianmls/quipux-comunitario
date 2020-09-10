@@ -691,7 +691,7 @@ function mostrar_applet_firma_digital($radicados,$token='',$ejecucion=0,$numdocs
         //$body = "'$body;
         $docstxt.= $radi_nume_text.",";
         //CONSUMO DE SERVICIO WEB RES
-        $urlws = "http://segun la configuracion del servicio de firma";
+        $urlws = $swEnvioArchivoFirmaConfig;
         // ------------------------------------------------------------
         $headers = array("Content-Type: application/json", "X-API-KEY: $api_key_token");
         $curl = curl_init();

@@ -107,4 +107,13 @@ $dias_descarga = 15;
 $cuenta_mail_respaldo = "respaldo@informatica.gob.ec";
 $versionEstable = 25;//version de firefox menores a 17 es soportada
 $api_key_token="appquipux";
+$swEnvioArchivoFirmaConfig = "https://impws.firmadigital.gob.ec/servicio/documentos";
+//Determina posición tamano y ambiente Solo para ambiente de pruebas debe estar en 1
+//Posición de la firma al pie
+$centrado = 260;
+$derecha = 419;
+$izquierda = 100;
+$parametrosFirmaConfig = "&llx=$centrado&lly=91&estampado=QR&razon=firmado desde $nombre_servidor";
+$parametrosFirmaConfig = rawurlencode($parametrosFirmaConfig);
+
 ?>
