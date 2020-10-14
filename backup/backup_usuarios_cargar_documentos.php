@@ -22,11 +22,11 @@
 **   - Recibidos: documentos recibidos por el usuario, reasignados e informados al usuario **
 **                                                                                         **
 ** Desarrollado por:                                                                       **
-**      Mauricio Haro A. - 
-** SGE-Mintel
+**      Mauricio Haro A. -                                                                 **
+** SGE-Mintel                                                                              **          
 **      David Gamboa. - josedavo@gmail.com - afinando querys en base de datos              ** 
- *      Postgres                                                          **
- *      Seguridades
+**      Postgres                                                                           **
+**      Seguridades                                                                        **
 ********************************************************************************************/
 
 $ruta_raiz= "..";
