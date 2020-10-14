@@ -22,11 +22,11 @@
 ** si es que ya finalizó y eliminarlos.                                             **
 **                                                                                  **
 ** Desarrollado por:                                                                **
-**      Mauricio Haro A. -                               **
-** SGE-Mintel
-**      David Gamboa. -  - afinando querys en base de datos              ** 
- *      Postgres particionamiento                                                          **
- *      Seguridades                        **
+**      Mauricio Haro A. -                                                          **
+** SGE-Mintel                                                                       **
+**      David Gamboa. -  - afinando querys en base de datos                         ** 
+**      Postgres particionamiento                                                   **
+**      Seguridades                                                                 **
 *************************************************************************************/
 
 $ruta_raiz = "..";
