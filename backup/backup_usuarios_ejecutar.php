@@ -22,11 +22,11 @@
 ** llamando a backup_usuarios_cargar_documentos.php utilizando Ajax                 **
 **                                                                                  **
 ** Desarrollado por:                                                                **
-**      Mauricio Haro A. -                                **
-** SGE-Mintel
-**      David Gamboa. - josedavo@gmail.com - afinando querys en base de datos              ** 
- *      Postgres                                                        **
- *      Seguridades
+**      Mauricio Haro A. -                                                          **
+** SGE-Mintel                                                                       **
+**      David Gamboa. - josedavo@gmail.com - afinando querys en base de datos       ** 
+**      Postgres                                                                    **
+**      Seguridades                                                                 **
 *************************************************************************************/
 
 $ruta_raiz = "..";
