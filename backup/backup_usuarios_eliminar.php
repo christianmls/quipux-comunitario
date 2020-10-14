@@ -20,11 +20,11 @@
 ** Permite eliminar los respaldos ya finalizados o en ejecución                     **
 **                                                                                  **
 ** Desarrollado por:                                                                **
-**      Mauricio Haro A. -                             **
-** SGE-Mintel
-**      David Gamboa. - josedavo@gmail.com - afinando querys en base de datos              ** 
- *      Postgres                                                         **
- *      Seguridades
+**      Mauricio Haro A. -                                                          **
+** SGE-Mintel                                                                       **
+**      David Gamboa. - josedavo@gmail.com - afinando querys en base de datos       ** 
+**      Postgres                                                                    **
+**      Seguridades                                                                 **  
 *************************************************************************************/
 
 $ruta_raiz = "..";
