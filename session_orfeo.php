@@ -34,6 +34,7 @@ if (str_replace("/","",str_replace(".","",$ruta_raiz))!="")
 include_once ("$ruta_raiz/include/db/ConnectionHandler.php");
 include_once ("$ruta_raiz/config.php");
 include_once ("$ruta_raiz/config_replicacion.php");
+
 error_reporting(7);
 $db = new ConnectionHandler("$ruta_raiz");
 $db->conn->SetFetchMode(ADODB_FETCH_ASSOC);
