@@ -116,12 +116,4 @@ $derecha = 419;
 $izquierda = 100;
 $parametrosFirmaConfig = "&llx=$centrado&lly=91&estampado=QR&razon=firmado desde $nombre_servidor";
 $parametrosFirmaConfig = rawurlencode($parametrosFirmaConfig);
-
-/****************************************************************************
-  * authBasic,authPassword
-  ***************************************************************************/
-  $authUser = "";
-  $authPassword = "";
-
-
 ?>
