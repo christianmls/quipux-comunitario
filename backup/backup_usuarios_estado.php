@@ -22,11 +22,19 @@
 ** si es que ya finalizó y eliminarlos.                                             **
 **                                                                                  **
 ** Desarrollado por:                                                                **
-**      Mauricio Haro A. - mauricioharo21@gmail.com                                 **
+**      Mauricio Haro A. -                                                          **
+** SGE-Mintel                                                                       **
+**      David Gamboa. -  - afinando querys en base de datos                         ** 
+**      Postgres particionamiento                                                   **
+**      Seguridades                                                                 **
 *************************************************************************************/
 
 $ruta_raiz = "..";
 include_once "$ruta_raiz/config.php";
+
+if ($_SERVER['PHP_AUTH_USER'] != $authUser && $_SERVER['PHP_AUTH_PW'] != $authPassword)
+    die('permissions not supported');
+
 include_once "$ruta_raiz/include/db/ConnectionHandler.php";
 include_once "$ruta_raiz/funciones_interfaz.php";
 
