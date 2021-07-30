@@ -1,3 +1,8 @@
+# Soporte y Garantía
+
+* Se recomienda el uso de un software de protección perimetral
+* El Sistema no tiene soporte comunitario.
+
 # quipux-comunitario
 Mintel
 Quipux es un sistema basado en el Sistema de Gestión Documental Orfeo en el año 2007, ha sido modificado y adaptado a las necesidades de Instituciones Públicas para la gestión Documental.
@@ -63,4 +68,5 @@ Edite el archivo include/tx/Tx.php
 CONSUMO DE SERVICIO WEB RES, la url es proporcionada de firma
 
 $urlws = "http://segun la configuracion del servicio de firma";
+
 
