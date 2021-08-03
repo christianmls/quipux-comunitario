@@ -50,7 +50,8 @@ try {
      if (!isset($_POST["txt_resp_codi"]))
     $resp_codi = 0;
     else
-    $resp_codi = 0 + limpiar_sql($_POST["txt_resp_codi"]);
+   // $resp_codi = 0 + limpiar_sql($_POST["txt_resp_codi"]);
+   $resp_codi = (int) limpiar_numero($_POST["txt_resp_codi"]);
     if ($resp_codi == 0)
     die("Error file zip");
 

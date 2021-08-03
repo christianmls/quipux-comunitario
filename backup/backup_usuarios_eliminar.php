@@ -35,9 +35,11 @@ include_once "$ruta_raiz/config.php";
 include_once "$ruta_raiz/rec_session.php";
 require_once "$ruta_raiz/funciones.php"; //para traer funciones p_get y p_post
 
-$resp_codi = limpiar_sql($_POST["txt_resp_codi"]);
-$resp_codi = 0 + $resp_codi;
+//$resp_codi = limpiar_sql($_POST["txt_resp_codi"]);
+//$resp_codi = 0 + $resp_codi;
 
+$resp_codi = limpiar_numero($_POST["txt_resp_codi"]);
+$resp_codi = (int) $resp_codi;
 
 $sql = "select coalesce(fecha_fin::text,'NO') as \"fecha_fin\" from respaldo_usuario where resp_codi=$resp_codi";
 $rs = $db->query($sql);

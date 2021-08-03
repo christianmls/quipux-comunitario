@@ -42,7 +42,9 @@ $db = new ConnectionHandler("$ruta_raiz");
 $db->conn->SetFetchMode(ADODB_FETCH_ASSOC);
 
 
-$respaldo = limpiar_sql($_POST["txt_resp_codi"]);
+//$respaldo = limpiar_sql($_POST["txt_resp_codi"]);
+$respaldo = limpiar_numero($_POST["txt_resp_codi"]);
+$respaldo = (int) $respaldo;
 
 $sql = "select usua_codi from respaldo_usuario where resp_codi=$respaldo";
 $rs = $db->query($sql);

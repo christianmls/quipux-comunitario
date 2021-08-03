@@ -31,6 +31,7 @@ $db = new ConnectionHandler("$ruta_raiz");
 $db->conn->SetFetchMode(ADODB_FETCH_ASSOC);
 
 $cmb_institucion = trim(limpiar_sql($_GET["cmb_institucion"]));
+$cmb_institucion = intval(trim(limpiar_sql($_GET["cmb_institucion"])));
 $txt_fecha_inicio_sol = trim(limpiar_sql($_GET["txt_fecha_inicio_sol"]));
 $txt_fecha_fin_sol = trim(limpiar_sql($_GET["txt_fecha_fin_sol"]));
 $cmb_estado = trim(limpiar_sql($_GET["cmb_estado"]));
