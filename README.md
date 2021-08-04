@@ -12,7 +12,9 @@ Licenciado como software Libre, GNU/GPL para la distribución libre, gratuita ad
 Verifique ajustes de seguridad como permisos sobre el sistema operativo, configuración de componentes, etc.
 
 # Garantía
-Repudio de garantía" ("Disclaimer of warranty")
+
+Repudio de garantía" ("Disclaimer of warranty").
+
 No se ofrece ninguna garantía sobre el programa de ninguna clase, expresa o implícita. Usted asume cualquier riesgo referente a la calidad, seguridad y prestaciones del programa. Si el programa se prueba como defectuoso, usted asume el coste de cualquier servicio de reparación o corrección.
 
 # Requerimientos
