@@ -4,10 +4,16 @@
 * El Sistema no tiene soporte comunitario.
 
 # quipux-comunitario
-Mintel
+
 Quipux es un sistema basado en el Sistema de Gestión Documental Orfeo en el año 2007, ha sido modificado y adaptado a las necesidades de Instituciones Públicas para la gestión Documental.
 La versión comunitaria ha sido adaptado para uso de GADS, Instituciones, Organizaciones, Companías y Empresas.
 Licenciado como software Libre, GNU/GPL para la distribución libre, gratuita además de compartir los conocimientos y modificaciones.
+
+Verifique ajustes de seguridad como permisos sobre el sistema operativo, configuración de componentes, etc.
+
+# Repudio de garantía ("Disclaimer of warranty"):
+
+No se ofrece ninguna garantía sobre el programa de ninguna clase, expresa o implícita. Usted asume cualquier riesgo referente a la calidad, seguridad y prestaciones del programa. Si el programa se prueba como defectuoso, usted asume el coste de cualquier servicio de reparación o corrección.
 
 # Requerimientos
 * S.O -> Centos, Ubuntu, Fedora
