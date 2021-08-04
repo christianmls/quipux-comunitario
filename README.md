@@ -3,7 +3,7 @@
 * Se recomienda el uso de un software de protección perimetral
 * El Sistema no tiene soporte comunitario.
 
-# quipux-comunitario
+# Quipux comunitario
 
 Quipux es un sistema basado en el Sistema de Gestión Documental Orfeo en el año 2007, ha sido modificado y adaptado a las necesidades de Instituciones Públicas para la gestión Documental.
 La versión comunitaria ha sido adaptado para uso de GADS, Instituciones, Organizaciones, Companías y Empresas.
