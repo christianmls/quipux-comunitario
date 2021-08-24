@@ -1,3 +1,8 @@
+# Proyecto descontinuado
+
+> :warning: No está siendo mantenido, no recibe actualizaciones. No existe garantía de su funcionamiento ni seguridad. No se recomienda su uso en producción.
+
+
 # Quipux comunitario
 
 Quipux es un sistema basado en el Sistema de Gestión Documental Orfeo en el año 2007, ha sido modificado y adaptado a las necesidades de Instituciones Públicas para la gestión Documental.
